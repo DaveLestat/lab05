@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
@@ -7,11 +7,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) {
+  var result = a+b;
+  var message = 'The sum of ' + a + ' and '+ b +' is ' +result+'.';
+  var array1 = [result, message];
+  console.log(array1);
+  return array1;
   //eslint-disable-line
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -23,11 +28,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
+  var result = a*b;
+  var message = 'The product of ' + a + ' and '+ b +' is ' +result+'.';
+  var array2 = [result, message];
+  console.log(array2);
+  return array2;
   //eslint-disable-line
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -41,11 +51,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
+  var sumresult = a+b+c;
+  var multiply = a*b*c;
+  var message1 = a + ' and ' +b+ ' and ' +c+ ' sum to ' +sumresult+ '.';
+  var message2 = 'The product of ' +a+ ' and ' +b+ ' and ' +c+ ' is ' +multiply+'.';
+  var array3 = [sumresult, multiply, message1, message2];
+  console.log(array3);
+  return array3;
   //eslint-disable-line
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -60,12 +77,22 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(testArray) {
+  var sum1 = 0;
+  for (var i = 0; i<testArray.length; i++){
+    sum1 = sum(testArray[i], sum1)[0];
+    console.log(i);}
+  var message = testArray + ' was passed in as an array of numbers, and '+sum1+' is their sum.';
+  var array4 = [sum1, message];
+  console.log(array4);
+  return array4;
+
+
   //eslint-disable-line
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -78,10 +105,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray) {
+  var product = 1;
+  for (var i = 0; i<testArray.length; i++){
+    product = multiply(testArray[i], product)[0];
+    console.log(i);}
+  var message = 'The numbers ' +testArray+' have a product of ' +product+'.';
+  var array5 = [product, message];
+  console.log(array5);
+  return array5;
   //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
